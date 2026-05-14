@@ -184,14 +184,6 @@ tools/uiplan/                          CLI toolkit
   generators/                          Docs bundle generator
   integrations/                        Skills bridge
 
-framework/                             MCP tool backends and CLI commands
-  mcp_server/tools/
-    plan_uiplan.py                     MCP actions: ground, spec, plan, tasks, review
-    plan_uiplan_review.py              Structured review (spec-kit + superpowers checks)
-  uipath_claude/commands/
-    uiplan.py                          Slash command wiring (/uiplan-ground, /uiplan-spec, ...)
-    uiplan.md                          Command reference
-
 .cursor/skills/                        Cursor agent skills (subagents)
   uiplan/                              Main UiPlan skill
   uiplan-ground/                       Grounding: discover project context before planning

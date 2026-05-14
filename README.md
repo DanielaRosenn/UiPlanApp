@@ -2,24 +2,14 @@
 
 A local-first visual builder for exploring and planning UiPath automation projects. Indexes project files, renders an interactive graph, and surfaces planning documents, skills, and review gates -- all from your browser.
 
-## Quick Start with Docker (Recommended)
-
-```bash
-docker-compose up
-```
-
-Open http://localhost:5173 - that's it!
-
-To add your own plan bundles, put them in the `plans/` folder.
-
-## Manual Setup (Development)
+## Quick Start
 
 ### Prerequisites
 
 - Python 3.11+
 - Node.js 18+
 
-## Quick start
+### Clone and setup
 
 ```bash
 git clone --recurse-submodules https://github.com/DanielaRosenn/UiPlanApp.git

@@ -150,46 +150,96 @@ npm test
 ## Project structure
 
 ```
-api/
+api/                                   FastAPI backend
   app/
-    main.py                          FastAPI composition root
-    explorer.py                      Project graph endpoints
-    explorer_config.py               YAML config loader
-    explorer_indexer.py              File-system indexer
-    explorer_skills.py               Skill aggregation
-    library_service.py               Library search (graceful degradation)
-    review_service.py                Review engine (graceful degradation)
-    copilot_runtime.py               CopilotKit actions
-    diagram_service.py               Diagram persistence
-    context_sources.py               Context source registry
-    security.py                      Loopback-only middleware
-    state.py                         Shared state and helpers
-    schemas.py                       Pydantic models
-    routers/                         Route handlers
-    generation_contracts/            Approval package system
-    project_graph/                   Typed graph models
-  tests/                             Pytest suite
+    main.py                            Composition root
+    explorer.py                        Project graph endpoints
+    explorer_indexer.py                File-system indexer
+    explorer_skills.py                 Skill aggregation
+    library_service.py                 Library search (graceful degradation)
+    review_service.py                  Review engine (graceful degradation)
+    copilot_runtime.py                 CopilotKit actions
+    context_sources.py                 Context source registry
+    routers/                           Route handlers
+    generation_contracts/              Approval package system
+    project_graph/                     Typed graph models
+  tests/                               Pytest suite
   pyproject.toml
 
-web/
+web/                                   React + Vite frontend
   src/
-    App.tsx                          Root component
-    components/
-      Canvas.tsx                     SVG graph renderer
-      UiplanCanvas.tsx               Planning-specific canvas
-      AsIsCanvas.tsx                 Current-state view
-      ToBeCanvas.tsx                 Target-state view
-      Inspector.tsx                  Right-panel detail viewer
-      LeftRail.tsx                   Left sidebar with filters
-      Breadcrumb.tsx                 Drill-down navigation
-    projectGraph/                    API client and types
-    layout.ts                        Graph layout engine
-    theme.ts                         Color palette and layer config
-    telemetry.ts                     UX event tracking
-  tests/                             Vitest + Playwright suites
+    App.tsx                            Root component
+    components/                        Canvas, Inspector, UiPlan views
+    projectGraph/                      API client and types
+    layout.ts                          Graph layout engine
   package.json
   vite.config.ts
+
+tools/uiplan/                          CLI toolkit
+  cli.py                               Entry point (python -m tools.uiplan ...)
+  paradigms.py                         Paradigm detection and task block generation
+  config.py                            Shared configuration
+  scaffold/                            Project scaffolding adapters (RPA, coded agent)
+  validators/                          Mermaid extraction, visual density checks
+  generators/                          Docs bundle generator
+  integrations/                        Skills bridge
+
+framework/                             MCP tool backends and CLI commands
+  mcp_server/tools/
+    plan_uiplan.py                     MCP actions: ground, spec, plan, tasks, review
+    plan_uiplan_review.py              Structured review (spec-kit + superpowers checks)
+  uipath_claude/commands/
+    uiplan.py                          Slash command wiring (/uiplan-ground, /uiplan-spec, ...)
+    uiplan.md                          Command reference
+
+.cursor/skills/                        Cursor agent skills (subagents)
+  uiplan/                              Main UiPlan skill
+  uiplan-ground/                       Grounding: discover project context before planning
+  uiplan-spec/                         Spec authoring (user stories, FRs, success criteria)
+  uiplan-plan/                         Plan authoring (architecture, component design)
+  uiplan-tasks/                        Task authoring (atomic implementation steps)
+  uiplan-review/                       Structured review gate
+  uiplan-implement/                    Implementation execution from accepted plan
+  uiplan-full/                         End-to-end orchestrator (ground -> implement)
+
+extensions/skills/uiplan/              Skill extension overlay
+
+templates/uiplan/                      Spec/plan/tasks templates and diagram patterns
+examples/uiplan-demo/                  Example plan bundle (spec + plan + tasks)
+test-fixtures/project-graph/           Golden fixtures for graph tests
+docs/uiplan/                           Full documentation set
 ```
+
+## CLI tooling
+
+The `tools/uiplan/` package provides a local CLI for generating and validating UiPlan bundles outside of the Cursor/MCP workflow.
+
+```bash
+# Generate a plan bundle from templates
+python -m tools.uiplan generate-docs my-project-slug
+
+# With paradigm and strict validation
+python -m tools.uiplan generate-docs my-project-slug --paradigm coded-agent --strict
+```
+
+The CLI detects project paradigm (RPA, coded agent, Maestro, etc.) and applies paradigm-specific task blocks, build loops, and deployment gates to the generated bundle.
+
+## Subagents (Cursor skills)
+
+The `.cursor/skills/uiplan*/` directories define agent skills that Cursor uses as specialized subagents in the planning workflow:
+
+| Skill | Purpose |
+|---|---|
+| `uiplan` | Main entry -- routing and lifecycle orchestration |
+| `uiplan-ground` | Discover project context, dependencies, and constraints before planning |
+| `uiplan-spec` | Author spec.md: user stories, functional requirements, success criteria |
+| `uiplan-plan` | Author plan.md: architecture, component design, integration contracts |
+| `uiplan-tasks` | Author tasks.md: atomic implementation steps with checkboxes |
+| `uiplan-review` | Structured review gate (spec coverage, citation resolution, constitution checks) |
+| `uiplan-implement` | Execute accepted plan task-by-task |
+| `uiplan-full` | End-to-end orchestrator: ground through implement in one pass |
+
+The default flow: `ground -> spec -> plan -> tasks -> review -> accept -> implement`
 
 ## Skills (submodule)
 

@@ -1,0 +1,34 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+.venv
+api/.venv
+*.egg-info
+
+# Node
+node_modules
+web/node_modules
+
+# IDE
+.cursor
+.vscode
+*.swp
+
+# Test files
+test-fixtures
+*.test.*
+tests/
+
+# Docs we don't need in container
+docs/
+*.md
+!README.md
+
+# Local development
+.env
+.env.*

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount a local plans folder so users can add their own bundles
+      - ./plans:/app/.cursor/plans
+    environment:
+      - UIPLAN_PLANS_ROOT=/app/.cursor/plans
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile.web
+    ports:
+      - "5173:80"
+    depends_on:
+      - api

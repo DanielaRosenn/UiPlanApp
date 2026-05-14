@@ -7,6 +7,7 @@ A local-first visual builder for exploring and planning UiPath automation projec
 ```
 api/          Python (FastAPI) backend -- project indexer, review engine, generation contracts
 web/          React + Vite frontend -- interactive canvas, inspector, planning views
+skills/       UiPlan skill definitions -- AI assistant guidance for each planning phase
 ```
 
 The **API** runs on `localhost:8000` and serves the project graph, context sources, CopilotKit actions, and generation package management. A `LocalOnlyMiddleware` rejects requests from non-loopback clients.
@@ -176,6 +177,23 @@ web/
   package.json
   vite.config.ts
 ```
+
+## Skills
+
+The `skills/` directory contains UiPlan skill definitions -- structured guidance files that AI assistants (Cursor, Claude Code, Copilot) use when working on each planning phase.
+
+| Skill | Purpose |
+|---|---|
+| `uiplan` | Core UiPlan routing and orchestration |
+| `uiplan-full` | End-to-end UiPlan authoring workflow (spec, plan, tasks, review) |
+| `uiplan-spec` | Write and refine the spec document |
+| `uiplan-plan` | Write and refine the plan document |
+| `uiplan-tasks` | Generate and manage the task breakdown |
+| `uiplan-review` | Run acceptance review gates |
+| `uiplan-ground` | Ground planning artifacts in project context |
+| `uiplan-implement` | Bridge from plan to implementation |
+
+Each skill is a `SKILL.md` file that defines triggers, guardrails, inputs/outputs, and step-by-step instructions for the AI assistant.
 
 ## License
 

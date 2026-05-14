@@ -38,6 +38,30 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173).
 
+## Testing
+
+### Run API tests
+
+```bash
+cd api
+uv sync  # Install dependencies
+uv run pytest tests/test_uiplan_integration.py -v
+```
+
+### Run full stack test
+
+```bash
+cd api
+uv run python ../scripts/test_full_stack.py
+```
+
+This script:
+1. Verifies templates are present and valid
+2. Checks test bundle structure
+3. Starts the API server
+4. Tests health and bundle loading endpoints
+5. Reports pass/fail status
+
 ## What it does
 
 **Project Map** -- point at any folder and get a layered graph of files, skills, integrations, and Orchestrator resources grouped by layer (RPA, Agent, App, Orchestrator, External, Skills). Focus mode starts from entry points; Full mode shows everything.

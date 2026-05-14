@@ -7,7 +7,7 @@ A local-first visual builder for exploring and planning UiPath automation projec
 ```
 api/          Python (FastAPI) backend -- project indexer, review engine, generation contracts
 web/          React + Vite frontend -- interactive canvas, inspector, planning views
-skills/       UiPlan skill definitions -- AI assistant guidance for each planning phase
+skills/       Git submodule -> github.com/UiPath/skills (shared skill catalog)
 ```
 
 The **API** runs on `localhost:8000` and serves the project graph, context sources, CopilotKit actions, and generation package management. A `LocalOnlyMiddleware` rejects requests from non-loopback clients.
@@ -24,6 +24,19 @@ The **Web** frontend connects to the API and renders two main views:
 - npm
 
 ## Quick start
+
+### 0. Clone with submodules
+
+```bash
+git clone --recurse-submodules https://github.com/DanielaRosenn/UiPlanApp.git
+cd UiPlanApp
+```
+
+If you already cloned without `--recurse-submodules`:
+
+```bash
+git submodule update --init
+```
 
 ### 1. Start the API
 
@@ -178,22 +191,15 @@ web/
   vite.config.ts
 ```
 
-## Skills
+## Skills (submodule)
 
-The `skills/` directory contains UiPlan skill definitions -- structured guidance files that AI assistants (Cursor, Claude Code, Copilot) use when working on each planning phase.
+The `skills/` directory is a git submodule pointing to [github.com/UiPath/skills](https://github.com/UiPath/skills) -- the shared UiPath skill catalog. After cloning, initialize it with:
 
-| Skill | Purpose |
-|---|---|
-| `uiplan` | Core UiPlan routing and orchestration |
-| `uiplan-full` | End-to-end UiPlan authoring workflow (spec, plan, tasks, review) |
-| `uiplan-spec` | Write and refine the spec document |
-| `uiplan-plan` | Write and refine the plan document |
-| `uiplan-tasks` | Generate and manage the task breakdown |
-| `uiplan-review` | Run acceptance review gates |
-| `uiplan-ground` | Ground planning artifacts in project context |
-| `uiplan-implement` | Bridge from plan to implementation |
+```bash
+git submodule update --init
+```
 
-Each skill is a `SKILL.md` file that defines triggers, guardrails, inputs/outputs, and step-by-step instructions for the AI assistant.
+The skill catalog includes UiPlan skills (`skills/skills/uiplan-*`) as well as skills for RPA, agents, Maestro, and other UiPath paradigms. The API's explorer and context-source endpoints use this catalog for skill aggregation and coverage mapping.
 
 ## License
 

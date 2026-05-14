@@ -12,11 +12,14 @@ It runs locally against the project you point it at.
 From inside any UiPath project (RPA, coded agent, Maestro, solution, or
 mixed):
 
-```
-uipath-claude explore --init       # writes .uiplan/explorer.yaml
-# edit .uiplan/explorer.yaml — fill in name, owner, triggers, actors, KPIs
-uipath-claude explore --check      # see what the indexer found
-uipath-claude explore              # boot the studio + open browser
+```bash
+# Start the API
+cd api && uvicorn app.main:app --reload --port 8000
+
+# Start the web UI
+cd web && npm run dev
+
+# Open the browser and enter a project folder path
 ```
 
 The studio opens at `http://127.0.0.1:5173/?worktree=<your-project-path>`,

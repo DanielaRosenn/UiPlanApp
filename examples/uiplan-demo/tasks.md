@@ -41,5 +41,5 @@ Goal: Remove obsolete examples and consolidate documentation.
 
 - [ ] Archive old `.cursor/plans/` examples not used by the product
 - [ ] Remove stale fixtures from `studio/web/src/__fixtures__/`
-- [ ] Update `docs/uiplan/STUDIO.md` to reference this example
+- [ ] Update `docs/STUDIO.md` to reference this example
 - [ ] Document the "one example" decision in the productization plan

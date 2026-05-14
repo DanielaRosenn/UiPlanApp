@@ -176,6 +176,6 @@ To add a new integration pattern:
 
 ## See Also
 
-- `docs/uiplan/VIEW_MODES.md` - How to expand nodes in Focus Mode
-- `docs/uiplan/STUDIO.md` - Full UiPlan Studio user guide
+- `docs/VIEW_MODES.md` - How to expand nodes in Focus Mode
+- `docs/STUDIO.md` - Full UiPlan Studio user guide
 - `docs/DEMO_FIXTURE_HOWTO.md` - How to create demo data from real projects

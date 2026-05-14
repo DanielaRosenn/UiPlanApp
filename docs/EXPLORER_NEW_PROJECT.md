@@ -29,9 +29,8 @@ Two services power it:
 
 | Component | Path | Purpose |
 |---|---|---|
-| Vite + React UI | `studio/web/` | Renders the explorer |
-| FastAPI service | `studio/api/` | Indexes the project, serves graph + knowledge |
-| CLI launcher | `framework/uipath_claude/cli/explore.py` | `uipath-claude explore` boots both, opens browser |
+| Vite + React UI | `web/` | Renders the explorer |
+| FastAPI service | `api/` | Indexes the project, serves graph + knowledge |
 
 ---
 
@@ -219,7 +218,7 @@ uipath-claude explore
 
 Source of truth for the BA overview is `.uiplan/explorer.yaml`. Per-node
 overlays live in `.uiplan/annotations.yaml`. See
-[docs/uiplan/EXPLORER_NEW_PROJECT.md](https://github.com/<org>/uipath-builder-agent/blob/main/docs/uiplan/EXPLORER_NEW_PROJECT.md)
+[docs/EXPLORER_NEW_PROJECT.md](EXPLORER_NEW_PROJECT.md)
 for details.
 ````
 
@@ -287,8 +286,7 @@ Schemas: `ExplorerGraphResponse`, `ExplorerKnowledgeResponse`,
 - Generation / apply paths from the older "graph workspace v2" iteration
   (`/graph/*` endpoints) still exist in the backend but are not consumed
   by the current UI. Treat them as deprecated; do not build on them.
-  See `docs/uiplan/_internal/EXPLORER_REVIEW_2026-05-07.md` for the full cleanup
-  list.
+  These are retained for backwards compatibility but should not be extended.
 
 ---
 

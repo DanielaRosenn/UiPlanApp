@@ -7,7 +7,7 @@ in three places:
   2. Cursor plans: `<project>/.cursor/plans/*.md`.
   3. Superpowers plans: `<project>/docs/superpowers/plans/*.md`.
   4. Nested UiPlan bundles: any directory that contains a `.meta.yaml` plus
-     at least one of the trio (e.g. `docs/uiplan/<slug>/`).
+     at least one of the trio (e.g. `docs/<slug>/`).
 
 For each `tasks.md` we parse markdown checkboxes:
 
@@ -47,7 +47,7 @@ PLAN_GLOBS: tuple[str, ...] = (
 # nested UiPlan bundles. The presence of `.meta.yaml` is preferred (provides a
 # slug) but not required.
 NESTED_BUNDLE_PARENT_GLOBS = (
-    "docs/uiplan/*",
+    "docs/*",
     ".uiplan/bundles/*",
     ".cursor/plans/*",
     "docs/superpowers/plans/*",

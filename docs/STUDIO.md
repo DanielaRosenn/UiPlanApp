@@ -35,9 +35,9 @@ The backend API provides:
 - **FOCUS Mode** (default): Hierarchical view starting from entry points (Main.xaml, main.py, etc.). Perfect for large projects (50+ nodes). Double-click to expand node children dynamically.
 - **FULL Mode**: Shows all indexed nodes. Best for small projects (< 30 nodes) or comprehensive audits.
 
-See `docs/uiplan/VIEW_MODES.md` for details on entry point detection, expansion, and performance tips.
+See `docs/VIEW_MODES.md` for details on entry point detection, expansion, and performance tips.
 
-See `docs/uiplan/INTEGRATIONS.md` for how external integrations and Orchestrator resources are automatically detected and visualized.
+See `docs/INTEGRATIONS.md` for how external integrations and Orchestrator resources are automatically detected and visualized.
 
 The UiPlan Studio is a read-only explorer for this productized version. Generation, editing, and deployment features are deferred.
 

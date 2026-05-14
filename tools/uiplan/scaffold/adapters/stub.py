@@ -26,11 +26,11 @@ class ExplicitStubAdapter(ScaffoldAdapter):
                     "recoverable": False,
                     "message": (
                         f"scaffold-code adapter not implemented for project kind {self.kind!r}. "
-                        "Use generate-docs for UiPlan bundles; see docs/uiplan/SCAFFOLD_CODE.md."
+                        "Use generate-docs for UiPlan bundles; see docs/SCAFFOLD_CODE.md."
                     ),
                 },
             },
             hints=[
-                "See docs/uiplan/SCAFFOLD_CODE.md and the runtime restructure design doc §13.",
+                "See docs/SCAFFOLD_CODE.md and the runtime restructure design doc §13.",
             ],
         )

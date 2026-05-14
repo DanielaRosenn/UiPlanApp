@@ -155,7 +155,7 @@ def _default_mapping(plan_slug: str, paradigm: str) -> dict[str, str]:
         "CONSTRAINTS": "_Org constraints (PII, regions, …)._",
         "SCALE": "_Volumes, tenants, robots._",
         "CONSTITUTION_CHECKLIST": "_Paste constitution gate table or bullets._",
-        "SOURCE_TREE": "_Key folders touched (see framework/, ops/, …)._",
+        "SOURCE_TREE": "_Key folders touched._",
         "CODE_STRUCTURE_BLOCK": code_structure_block(normalized),
         "BUILD_LOOP_BLOCK": build_loop_block(normalized),
         "STRUCTURE_DECISION": "_Why this layout._",

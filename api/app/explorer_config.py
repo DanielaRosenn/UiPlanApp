@@ -440,7 +440,7 @@ def _detect_project_type(path: Path) -> str:
 
 
 STARTER_CONFIG_TEMPLATE = """# UiPlan Explorer config — drives the project view in `uipath-claude explore`.
-# Docs: docs/uiplan/EXPLORER.md
+# Docs: docs/EXPLORER.md
 project:
   name: "{name}"
   type: {project_type}     # rpa | coded-agent | langgraph | maestro | solution | mixed

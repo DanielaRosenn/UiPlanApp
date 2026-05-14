@@ -39,7 +39,7 @@ skill / agent / subagent / MCP-tool tag, and acceptance.
   `uipath_library_lookup` -> `uipath_doc_get_activity` -> `query_uipath_docs`
   -> specialist skill -> ask user (recording attempts).
 
-See [`docs/uiplan/TASK_AUTHORING.md`](../../docs/uiplan/TASK_AUTHORING.md) for
+See [`docs/TASK_AUTHORING.md`](../../docs/TASK_AUTHORING.md) for
 the canonical workflow-design, capability-routing, handoff, and implementation
 loop contract.
 
@@ -118,7 +118,7 @@ List expected runtime log assertions by surface before implementation.
 
 Every queue, asset, folder, connection, or binding used by the automation must be
 provisioned and verified before deployment smoke tests. See
-[ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
+[ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
 §Orchestrator resource lifecycle for the complete contract.
 
 | Resource | Type | Target Folder | Provisioning Command | Verification Command | Evidence Path | Provisioning Task ID | Notes |
@@ -130,7 +130,7 @@ provisioned and verified before deployment smoke tests. See
 
 Every non-trivial activity (beyond basic `Sequence`, `Flowchart`, `If`, `Assign`,
 `Log Message`, `Try Catch`) must be grounded in activity docs before implementation.
-See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
+See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
 §Activity selection grounding for the complete contract.
 
 | Workflow | Activity | Package | Version | Required Scope | Required Props | Default XAML / Evidence | Activity Lookup Task ID |
@@ -140,7 +140,7 @@ See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EV
 ## UAT/test evidence checklist (required for production-bound stories)
 
 Every production-bound user story must include automated test workflows or documented
-manual UAT. See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
+manual UAT. See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
 §UAT/test evidence for the complete contract.
 
 | User Story | Scenario | Test Artifact | Execution Command | Evidence Path | AC Mapping | UAT Task ID |
@@ -301,7 +301,7 @@ Every checklist line must be **fully completable** under a single, explicit **Do
 ### Local validation and tenant evidence requirements
 
 Every build/pack task must include **local validation evidence** before deployment.
-See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
+See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
 §Local Studio evidence for the complete contract.
 
 **Required local validation steps** (before pack/deploy):
@@ -311,7 +311,7 @@ See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EV
 4. Optional local smoke run (when safe and non-destructive)
 
 Every deploy/smoke task must include **tenant evidence** or a structured blocker.
-See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
+See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
 §Tenant evidence for the complete contract.
 
 **Required tenant evidence components** (for deploy/smoke tasks):

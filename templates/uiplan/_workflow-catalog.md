@@ -329,7 +329,7 @@ flowchart TD
 - **When to use**: any automation that uses Orchestrator queues, assets, folders,
   connections, or bindings.
 - **When not to use**: local-only tests with no Orchestrator dependency.
-- **Required steps** (see [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
+- **Required steps** (see [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
   §Orchestrator resource lifecycle):
   1. Declare in `plan.md` Bindings and Environment with target folder, provisioning
      command, verification command, evidence path, and secret boundary.
@@ -375,7 +375,7 @@ flowchart TD
 
 - **When to use**: every production-bound user story in `spec.md`.
 - **When not to use**: analyzer/pack-only validation (not sufficient for UAT).
-- **Test artifact types** (see [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
+- **Test artifact types** (see [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
   §UAT/test evidence):
   1. **UiPath Testing Activities** (RPA/XAML):
      - Create test workflows under `Tests/` using `UiPath.Testing.Activities` package

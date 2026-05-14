@@ -20,7 +20,5 @@ Pass one or more Markdown files. The command extracts every fenced Mermaid block
 
 ## CI
 
-Default `pytest` stays fast and does **not** require Node. A lightweight unit test covers only the
-Markdown extractor (`tools/uiplan/validators/mermaid_extract.py`); see `framework/tests/uiplan/test_mermaid_extract.py` and `test_mermaid_mmdc_optional.py`. To gate releases on diagrams,
-add a separate workflow step or `workflow_dispatch` job that installs `@mermaid-js/mermaid-cli`
-and runs the command above on chosen paths.
+Default `pytest` stays fast and does **not** require Node. To gate releases on diagrams,
+add a CI step that installs `@mermaid-js/mermaid-cli` and runs the command above on chosen paths.

@@ -8,8 +8,6 @@ It supports Cursor slash commands, MCP tool calls, and terminal usage.
 [HOW_TO_USE.md](HOW_TO_USE.md). Use that file for **how** to run each surface; this
 README explains **what** UiPlan is and **when** to use it.
 
-![UiPlan logo](../assets/uiplan-logo.svg)
-
 ## Choose your path
 
 Use one primary path per session; all paths converge on the same bundle and gates.
@@ -128,9 +126,9 @@ flowchart TD
 | Surface | Canonical location | Role |
 | --- | --- | --- |
 | UiPlan document templates | [`templates/uiplan/`](../../templates/uiplan/) | Source for generated `spec.md`, `plan.md`, `tasks.md`, and diagram snippets |
-| Human documentation | [`docs/uiplan/`](./) | Current operating guide for humans and agents |
+| Human documentation | [`docs/`](./) | Current operating guide for humans and agents |
 | Cursor skill behavior | [`../../.cursor/skills/uiplan*/`](../../.cursor/skills/) | Slash command behavior and planning/implement contracts |
-| MCP tool implementation | [`../../framework/mcp_server/tools/plan_uiplan.py`](../../framework/mcp_server/tools/plan_uiplan.py), [`../../framework/mcp_server/tools/plan_uiplan_review.py`](../../framework/mcp_server/tools/plan_uiplan_review.py) | Generation, review, accept/publish surfaces |
+| MCP tools | Provided by the UiPath MCP server | Generation, review, accept/publish surfaces |
 | Local CLI/runtime | [`../../tools/uiplan/`](../../tools/uiplan/) | `generate-docs`, `scaffold-code`, validation helpers, and adapters |
 | Draft bundles | `.cursor/plans/<YYYY-MM-DD-slug>/` | Per-user working drafts with `.meta.yaml` |
 | Published bundles | [`../plans/`](../plans/) | Git-tracked accepted plans after publish |
@@ -153,7 +151,7 @@ Before any implementation begins:
 ```mermaid
 flowchart TB
   subgraph Guides["Human guides (context)"]
-    H[docs/uiplan/]:::human
+    H[docs/]:::human
   end
   subgraph Templates["Reusable kit"]
     U[templates/uiplan/]:::service
@@ -163,7 +161,6 @@ flowchart TB
   end
   subgraph Runtime["Runtime"]
     T[tools/uiplan CLI]:::service
-    F[framework/mcp_server plan tools]:::service
   end
   subgraph Drafts["Drafts (gitignored)"]
     C[".cursor/plans/<slug>/"]:::human
@@ -172,7 +169,6 @@ flowchart TB
   H -.->|read before drafting| C
   T --> C
   C -->|review + accept| P
-  F --> C
 ```
 
 ## Generate → review → accept → implement (sequence)

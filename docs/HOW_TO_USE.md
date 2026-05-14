@@ -10,8 +10,7 @@ should link here instead of copying command matrices.
 - **Kit:** `templates/uiplan/` at repo root (MCP and `generate-docs` resolve here).
 - **Runtime:** `tools/uiplan/` for local CLI entry points and scaffold/adaptor support.
 - **Cursor skills:** `.cursor/skills/uiplan*/SKILL.md` for slash command behavior.
-- **MCP tools:** `framework/mcp_server/tools/plan_uiplan*.py`.
-- **Pytest (UiPlan):** `framework/tests/uiplan/`. Example: `uv run pytest framework/tests/uiplan/ -q`.
+- **API tests:** `api/tests/`. Example: `cd api && pytest tests/ -q`.
 - **Task authoring:** [TASK_AUTHORING.md](TASK_AUTHORING.md) for workflow design,
   capability routing, examples, and the implementation loop.
 - **Activity and runtime evidence:** [ACTIVITY_AND_RUNTIME_EVIDENCE.md](ACTIVITY_AND_RUNTIME_EVIDENCE.md)

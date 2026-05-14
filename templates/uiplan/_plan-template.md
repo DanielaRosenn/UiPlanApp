@@ -336,7 +336,7 @@ Only entries resolved via `uipath_doc_get_activity` / `uipath_library_search` /
 Every non-trivial activity (beyond basic `Sequence`, `Flowchart`, `If`, `Assign`,
 `Log Message`, `Try Catch`) must include package ID, version, required scope,
 required properties, and default XAML or Studio-generated evidence. See
-[ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
+[ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
 §Activity selection grounding for the complete contract.
 
 | Workflow | Package | Activity | Version | Required Scope | Inputs | Outputs | Default XAML / Evidence |
@@ -353,7 +353,7 @@ required properties, and default XAML or Studio-generated evidence. See
 
 Every Orchestrator resource (queue, asset, folder, connection, binding) must be
 explicitly declared with provisioning commands, verification commands, and evidence
-paths. See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/uiplan/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
+paths. See [ACTIVITY_AND_RUNTIME_EVIDENCE.md](../../docs/ACTIVITY_AND_RUNTIME_EVIDENCE.md)
 §Orchestrator resource lifecycle for the complete contract.
 
 ### Queues

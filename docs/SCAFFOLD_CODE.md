@@ -6,8 +6,7 @@
 > detected paradigm, it may validate markers and return follow-up suggestions
 > rather than build business behavior.
 
-This note is the **baseline** for per-project-type scaffold work (see
-`docs/superpowers/specs/2026-04-23-uiplan-runtime-restructure-design.md`, section 13).
+This note is the **baseline** for per-project-type scaffold work.
 
 ## CLI entry
 

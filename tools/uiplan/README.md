@@ -10,6 +10,5 @@ This package is runtime code for UiPlan. It is not the template kit.
 | `validators/` | Mermaid extraction, optional `mmdc` checks, and visual-density validation |
 | `integrations/` | Hooks for skill-driven execution |
 
-Human-facing usage docs live in `docs/uiplan/`. Reusable markdown templates live in
-`templates/uiplan/`. Runtime tests live in `framework/tests/uiplan/` so they are
-collected by the repository's single pytest root.
+Human-facing usage docs live in `docs/`. Reusable markdown templates live in
+`templates/uiplan/`. API tests live in `api/tests/`.

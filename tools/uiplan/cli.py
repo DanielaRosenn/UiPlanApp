@@ -86,7 +86,7 @@ def scaffold_code(
         help="Repository root to classify (default: parent of tools/, i.e. this monorepo).",
     ),
 ) -> None:
-    """Run scaffold checks for the detected project type (see docs/uiplan/SCAFFOLD_CODE.md)."""
+    """Run scaffold checks for the detected project type (see docs/SCAFFOLD_CODE.md)."""
     effective = resolve_max_loops(
         flag_value=max_loops,
         env_value=os.environ.get("UIPLAN_MAX_LOOPS"),
@@ -109,7 +109,7 @@ def validate_mermaid(
         readable=True,
     ),
 ) -> None:
-    """Validate fenced Mermaid blocks using ``mmdc`` (optional; see docs/uiplan/MERMAID_VALIDATION.md)."""
+    """Validate fenced Mermaid blocks using ``mmdc`` (optional; see docs/MERMAID_VALIDATION.md)."""
     issues = validate_mermaid_with_mmdc(paths)
     if issues:
         for line in issues:

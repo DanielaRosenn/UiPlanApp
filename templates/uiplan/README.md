@@ -22,9 +22,9 @@ project teams:
 This README is for **template maintainers**.  
 If you want usage/onboarding instructions, start with:
 
-- [docs/uiplan/README.md](../../docs/uiplan/README.md)
-- [docs/uiplan/HOW_TO_USE.md](../../docs/uiplan/HOW_TO_USE.md)
-- [docs/uiplan/TASK_AUTHORING.md](../../docs/uiplan/TASK_AUTHORING.md)
+- [docs/README.md](../../docs/README.md)
+- [docs/HOW_TO_USE.md](../../docs/HOW_TO_USE.md)
+- [docs/TASK_AUTHORING.md](../../docs/TASK_AUTHORING.md)
 
 ## Template files
 
@@ -43,23 +43,20 @@ Templates now include anchors for UiPlan Studio's AS-IS and TO-BE canvases:
 - **AS-IS** (`spec.md#business-process-flow`): Manual process swim-lanes showing actors, handoffs, channels, SLA, and pain points.
 - **TO-BE** (`spec.md#solution-architecture` + `plan.md#solution-architecture`, `plan.md#runtime-sequence`, `plan.md#workflow-catalog`): Automated solution architecture with triggers, workflows, integrations, Orchestrator resources, HITL surfaces, and evidence sinks.
 
-To enable these views, configure `.uiplan/explorer.yaml` with a `views:` block pointing at the template-provided anchors. See [docs/uiplan/EXPLORER.md](../../docs/uiplan/EXPLORER.md) for the full schema.
+To enable these views, configure `.uiplan/explorer.yaml` with a `views:` block pointing at the template-provided anchors. See [docs/EXPLORER.md](../../docs/EXPLORER.md) for the full schema.
 
 ## Maintainer rules
 
 - Keep placeholders and headings aligned with generator mappings in:
-  - [framework/mcp_server/tools/plan_uiplan.py](../../framework/mcp_server/tools/plan_uiplan.py)
   - [tools/uiplan/generators/docs_bundle.py](../../tools/uiplan/generators/docs_bundle.py)
 - Keep review expectations aligned with:
-  - [framework/mcp_server/tools/plan_uiplan_review.py](../../framework/mcp_server/tools/plan_uiplan_review.py)
-  - [framework/tests/mcp_tests/test_uiplan_review.py](../../framework/tests/mcp_tests/test_uiplan_review.py)
   - [.cursor/skills/uiplan-review/SKILL.md](../../.cursor/skills/uiplan-review/SKILL.md)
 - When adding new required sections/markers, update template + generator defaults + review rules + tests in the same change.
 - Visual standards are part of the template contract. If `_spec-template.md`
   changes required visuals, update `_diagram-patterns.md`,
-  [docs/uiplan/README.md](../../docs/uiplan/README.md),
-  [docs/uiplan/HOW_TO_USE.md](../../docs/uiplan/HOW_TO_USE.md), and
-  [docs/uiplan/TASK_AUTHORING.md](../../docs/uiplan/TASK_AUTHORING.md).
+  [docs/README.md](../../docs/README.md),
+  [docs/HOW_TO_USE.md](../../docs/HOW_TO_USE.md), and
+  [docs/TASK_AUTHORING.md](../../docs/TASK_AUTHORING.md).
 - Named project templates are host shells unless documented otherwise. If a
   template task names a repo or Studio template, the generated tasks must require
   the full lifecycle: copy/export the template, read/inspect the copied

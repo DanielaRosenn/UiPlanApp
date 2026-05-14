@@ -50,6 +50,6 @@ This example demonstrates:
 
 ## References
 
-- [UiPlan Documentation](../../docs/uiplan/README.md)
+- [UiPlan Documentation](../../docs/README.md)
 - [Planning Framework](../../docs/PLANNING_FRAMEWORK.md)
-- [UiPlan Studio Guide](../../docs/uiplan/STUDIO.md)
+- [UiPlan Studio Guide](../../docs/STUDIO.md)

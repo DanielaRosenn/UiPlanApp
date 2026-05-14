@@ -20,13 +20,12 @@ then execute.
 | Role | Path |
 | --- | --- |
 | Template kit | `templates/uiplan/` only |
-| Human overview | `docs/uiplan/README.md`, `docs/uiplan/HOW_TO_USE.md` |
-| UiPlan pytest | `framework/tests/uiplan/` (collected via `testpaths = ["framework/tests"]`) |
-| After clone | `docs/uiplan/CLONED_PROJECT_SETUP.md` |
+| Human overview | `docs/README.md`, `docs/HOW_TO_USE.md` |
+| API tests | `api/tests/` |
 | Draft bundle | `.cursor/plans/<YYYY-MM-DD-slug>/` |
 | Published bundle | `docs/plans/<YYYY-MM-DD-slug>/` after accept + publish |
 
-In **Cursor**, attach **`@docs/uiplan/`** so the full contract (paths, gates, Mermaid rules) is in context.
+In **Cursor**, attach **`@docs/`** so the full contract (paths, gates, Mermaid rules) is in context.
 
 ## When to use
 
@@ -113,7 +112,7 @@ flowchart TD
 
 **One-shot orchestrator:** `uipath_plan_uiplan_new` runs ground through `uipath_plan_review(all)`; then fix findings and accept when clean.
 
-**Local file-first path:** `uv run python -m tools.uiplan generate-docs <slug>` then human approval, then `scaffold-code` — see [docs/uiplan/HOW_TO_USE.md](../../../docs/uiplan/HOW_TO_USE.md).
+**Local file-first path:** `uv run python -m tools.uiplan generate-docs <slug>` then human approval, then `scaffold-code` — see [docs/HOW_TO_USE.md](../../../docs/HOW_TO_USE.md).
 
 ## Spec quality contract (LLM readiness)
 
@@ -176,7 +175,7 @@ After acceptance and when ready to promote: **`uipath_plan_publish`** copies the
 
 ## Slash / CLI (same MCP tools as Cursor)
 
-- **`uipath chat`:** `/uiplan full <title>` or staged `/uiplan ground|spec|plan|tasks|review ...` (see `framework/uipath_claude/commands/uiplan.md`).
+- **`uipath chat`:** `/uiplan full <title>` or staged `/uiplan ground|spec|plan|tasks|review ...`.
 - **Terminal:** `uipath-claude plan uiplan full "<title>"` or `plan uiplan ground|spec|plan|tasks|review ...`.
 
 ## Lightweight fallback — legacy single-file plan
@@ -197,9 +196,5 @@ Do not use `uipath_plan_refine` for UiPlan **folders**.
 
 ## Related
 
-- [docs/uiplan/README.md](../../../docs/uiplan/README.md), [HOW_TO_USE.md](../../../docs/uiplan/HOW_TO_USE.md)
-- [docs/PLANNING_FRAMEWORK.md](../../../docs/PLANNING_FRAMEWORK.md)
-- [docs/PDD_LIFECYCLE.md](../../../docs/PDD_LIFECYCLE.md)
-- `writing-uipath-plans` — shape of git-tracked `docs/plans/*.md` when not using UiPlan folders
+- [docs/README.md](../../../docs/README.md), [HOW_TO_USE.md](../../../docs/HOW_TO_USE.md)
 - `mermaid-diagram-builder` — Pro Standard diagrams
-- `uipath-planner` — routing only; load after planning if needed
